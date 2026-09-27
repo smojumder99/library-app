@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    background-color: rgb(24, 155, 204);
+    padding: 7px 14px;
+    border-radius: 13px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+#book-details-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0; 
+    padding: 30px;
+}
+
+input[type="text"], 
+input[type="number"]{
+    height: 1.8em;
+}
+
+#book-details-dialog div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    row-gap: 5px;
+}
+
+
+#book-details-dialog .read-status-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    column-gap: 10px; 
+}
+
+#book-details-dialog .read-status-container p {
+    flex-basis: 100%; 
+    margin-bottom: 5px; 
+}   
+
+.container {
+    display: grid;
+    grid-template: 180px 1fr/1fr;   
+    min-height: 100vh;
+}
+
+
+.header {
+    z-index: 1;
+    grid-row: 1/2;
+
+
+    background-image: url('library.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: lightsteelblue;
+    
+    box-shadow: 0 4px 5px -1px darkgray;
+    text-align: center;
+    color: beige;
+   
+
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+
+.header h1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: clamp(40px, 10vw, 140px);
+    place-self: center;
+}
+
+
+
+
+.library-collection {
+    grid-column: 1/2;
+    
+    background-color: #E2E7ED;
+    padding: 35px 25px 60px 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 18px;
+    row-gap: 30px;
+}
+
+
+
+.books {
+    background-color: #E2E7ED;
+    display: grid;
+   grid-template-columns: repeat(4,0.25fr); 
+    gap: 20px;
+
+}
+
+.book-name {
+    background-color: white;
+    border-radius: 10px;
+    border-left: 8px solid gold;
+    padding: 30px 20px 20px 20px;
+    box-shadow: 1px 3px 5px -1px darkgray;
+
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.book-name p {
+    color: grey;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.book-name h2{
+    margin-bottom: 10px;
+}
+
+.book-name div {
+    display: flex;
+    justify-content: end;
+    column-gap: 10px;
+
+    margin-top: auto;
+}
+
+.library-collection button {
+    justify-self: start;
+    width: auto;
+    height: auto;
+}
+
+
+
+
+
