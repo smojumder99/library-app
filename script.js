@@ -1,27 +1,26 @@
 const myLibrary = [];
 
 
-function Book(title, author, pages, read) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
-    }
+class Book{
 
+   constructor(title, author, pages, read) {
+   
     this.id = crypto.randomUUID()
 
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+}
 
-    this.info = function () {
-        return
-    }
+toggleReadStatus () {
+    this.read = !this.read;
+}
 
 }
 
-Book.prototype.toggleReadStatus = function() {
-    this.read = !this.read;
-};
+
+
 
 
 function addBookToLibrary(title, author, pages, read) {
@@ -76,8 +75,6 @@ function displayBooks() {
     }
 }
 
-
-
 const form = document.querySelector("#add-book");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -106,14 +103,6 @@ form.addEventListener("submit", function (e) {
     document.querySelector('#book-details-dialog').close();
 
 })
-
-
-
-
-
-
-
-
 
 
 const displayDiv = document.querySelector(".books");
@@ -158,31 +147,6 @@ displayDiv.addEventListener("click", function (e) {
     }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 addBookToLibrary("Think and grow rich ","Napoleon Hill",180,true);
 addBookToLibrary("Antifragile: Things That Gain From Disorder","Nassim Nicholas Taleb",230,false);
